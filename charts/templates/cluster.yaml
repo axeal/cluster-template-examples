@@ -18,6 +18,7 @@ spec:
   {{- if .Values.kubernetesVersion }}
   kubernetesVersion: {{ .Values.kubernetesVersion }}
   {{- end }}
+  {{- if .Values.rke.localClusterAuthEndpoint.enabled }}
   localClusterAuthEndpoint:
     enabled: {{ .Values.rke.localClusterAuthEndpoint.enabled }}
     {{- if .Values.rke.localClusterAuthEndpoint.fqdn }}
