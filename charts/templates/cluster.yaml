@@ -12,14 +12,14 @@ metadata:
   name: {{ .Values.cluster.name }}
   namespace: fleet-default
 spec:
+  localClusterAuthEndpoint:
+    enabled: true
   {{- if .Values.cloudCredentialSecretName }}
   cloudCredentialSecretName: {{ .Values.cloudCredentialSecretName }}
   {{- end }}
   {{- if .Values.kubernetesVersion }}
   kubernetesVersion: {{ .Values.kubernetesVersion }}
   {{- end }}
-  localClusterAuthEndpoint:
-    enabled: true
   # enable network policy
   enableNetworkPolicy: true
   # specify rancher helm chart values deployed into downstream cluster
