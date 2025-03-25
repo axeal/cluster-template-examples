@@ -18,16 +18,8 @@ spec:
   {{- if .Values.kubernetesVersion }}
   kubernetesVersion: {{ .Values.kubernetesVersion }}
   {{- end }}
-  {{- if .Values.rke.localClusterAuthEndpoint.enabled }}
   localClusterAuthEndpoint:
-    enabled: {{ .Values.rke.localClusterAuthEndpoint.enabled }}
-    {{- if .Values.rke.localClusterAuthEndpoint.fqdn }}
-    fqdn: {{ .Values.rke.localClusterAuthEndpoint.fqdn }}
-    {{- end }}
-    {{- if .Values.rke.localClusterAuthEndpoint.caCerts }}
-    caCerts: {{ .Values.rke.localClusterAuthEndpoint.caCerts }}
-    {{- end }}
-  {{- end }}
+    enabled: true
   # enable network policy
   enableNetworkPolicy: true
   # specify rancher helm chart values deployed into downstream cluster
